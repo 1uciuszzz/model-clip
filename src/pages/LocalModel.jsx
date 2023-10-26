@@ -60,7 +60,7 @@ const GLTF = ({ url }) => {
         }),
       })
     );
-  }, []);
+  }, [dispatch, meshes, url]);
 
   return (
     <>
