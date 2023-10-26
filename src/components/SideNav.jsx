@@ -8,6 +8,9 @@ const SideNav = () => {
         <MenuItem component={NavLink} to="/clip">
           <ListItemText>Clip</ListItemText>
         </MenuItem>
+        <MenuItem component={NavLink} to="/local-model">
+          <ListItemText>Local Model</ListItemText>
+        </MenuItem>
       </MenuList>
     </Box>
   );
