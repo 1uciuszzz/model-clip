@@ -11,14 +11,20 @@ const ModelList = () => {
   const models = useSelector((state) => state.localModel.models);
 
   return (
-    <Box className="flex flec-col overflow-y-auto overflow-x-hidden h-96">
+    <Box className="flex flex-col overflow-y-auto h-96">
       {models.map((model) => {
         return (
           <Box key={model.fileName}>
-            <Typography variant="h6">{model.fileName}</Typography>
+            <Typography variant="body1" className="line-clamp-1">
+              {model.fileName}
+            </Typography>
             <Box className="ml-4">
               {model.meshes?.map((mesh) => {
-                return <Typography key={mesh.id}>{mesh.name}</Typography>;
+                return (
+                  <Typography key={mesh.id} variant="body2">
+                    {mesh.name}
+                  </Typography>
+                );
               })}
             </Box>
           </Box>
@@ -60,7 +66,7 @@ const GLTF = ({ url }) => {
         }),
       })
     );
-  }, [dispatch, meshes, url]);
+  }, [meshes.length]);
 
   return (
     <>
@@ -88,7 +94,7 @@ const Models = () => {
       box.union(mesh.geometry.boundingBox);
     });
     controls?.fitToBox(box, true);
-  }, [controls, scene, models]);
+  }, [models.length]);
 
   return (
     <>

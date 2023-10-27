@@ -50,7 +50,7 @@ const ClipPlane = forwardRef(function ClipPlane(props, ref) {
     dispatch(
       clipSlice.actions.setXYZ({ x: center.x, y: center.y, z: center.z })
     );
-  }, [dispatch, scene, controls]);
+  }, [controls]);
 
   const [clipRes, setClipRes] = useImmer([]);
 
