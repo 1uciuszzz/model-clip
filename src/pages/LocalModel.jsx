@@ -94,7 +94,7 @@ const Models = () => {
       box.union(mesh.geometry.boundingBox);
     });
     controls?.fitToBox(box, true);
-  }, [models.length]);
+  }, [models.length, controls]);
 
   return (
     <>
