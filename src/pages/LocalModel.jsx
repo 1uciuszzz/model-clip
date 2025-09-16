@@ -1,6 +1,5 @@
 import { CameraControls, Environment, useGLTF } from "@react-three/drei";
 import { Canvas, useThree } from "@react-three/fiber";
-import kloofendal_43d_clear_puresky_4k from "../assets/kloofendal_43d_clear_puresky_4k.hdr";
 import { Box, Button, Typography } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
 import { localModelSlice } from "../stores/localMode";
@@ -142,11 +141,7 @@ const LocalModel = () => {
       <Canvas camera={{ far: 1000000 }}>
         <Models />
         <CameraControls makeDefault />
-        <Environment
-          files={kloofendal_43d_clear_puresky_4k}
-          background
-          blur={0.5}
-        />
+        <Environment files="env.hdr" background blur={0.5} />
       </Canvas>
     </Box>
   );

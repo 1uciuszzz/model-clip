@@ -11,7 +11,6 @@ import { Box, Button, Slider, Typography } from "@mui/material";
 
 import { clipSlice } from "../stores/clip";
 import { Model5 } from "../components/Datangpo";
-import kloofendal_43d_clear_puresky_4k from "../assets/kloofendal_43d_clear_puresky_4k.hdr";
 
 const getAllMeshes = (scene) => {
   let meshes = [];
@@ -246,11 +245,7 @@ const Clip = () => {
         <CameraControls makeDefault />
         {!clip.cliped && <Model5 />}
         <ClipPlane ref={clipPlane} />
-        <Environment
-          files={kloofendal_43d_clear_puresky_4k}
-          background
-          blur={0.5}
-        />
+        <Environment files="env.hdr" background blur={0.5} />
       </Canvas>
     </Box>
   );
