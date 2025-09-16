@@ -41,6 +41,9 @@ jobs:
         with:
           version: 10 # 可选：指定 pnpm 版本，如 9.x
 
+      - name: Check pnpm version
+        run: pnpm --version
+
       - name: Install dependencies
         run: pnpm install --frozen-lockfile # 类似于 npm ci
 
